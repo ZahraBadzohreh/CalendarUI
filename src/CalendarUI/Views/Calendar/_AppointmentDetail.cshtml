@@ -1,0 +1,35 @@
+﻿@model CalendarUI.Domain.Entities.Appointment
+
+
+<div class="row">
+    <div class="col-md-10">
+        <ul>
+            <li>
+                Description: @Model.Description
+            </li>
+            <li>
+                Date: @Model.DateTime
+            </li>
+            <li>
+                Organizer: @Model.Organizer
+            </li>
+            <li>
+                Attendees:
+                <ul>
+                    @foreach (var attend in Model.AttendeesList)
+                    {
+                        <li>
+                            @attend
+                        </li>
+                    }
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-2">
+        <button id="btnEdit" type="button" data-id="@Model.Id" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus"></span>
+            Edit
+        </button>
+    </div>
+</div>

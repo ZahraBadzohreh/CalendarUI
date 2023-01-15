@@ -1,0 +1,16 @@
+﻿@model List<CalendarUI.Domain.Entities.Appointment>
+
+<div class="col-4">
+    <div class="list-group">
+        @foreach (var appointment in Model)
+        {
+            <a class="list-group-item list-group-item-action" href="#" data-id="@appointment.Id">
+                @appointment.DateTime  @appointment.Description
+            </a>
+        }
+    </div>
+</div>
+<div class="col-8">
+    <div class="tab-content border" id="nav-tabContent">
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model List<MonthViewModel>
+@{
+    ViewData["Title"] = "Calendar";
+}
+
+<div class="border" style="padding:10px;">
+    <div class="row" style="padding:5px">
+        <div class="col-md-8">
+            Choose your month:
+        </div>
+        <div class="col-md-4">
+            <button id="btnCreate" type="button" class="btn btn-success">
+                <span class="glyphicon glyphicon-plus"></span>
+                New Appointment
+            </button>
+        </div>
+    </div>
+    <div class="btn-group" role="group" aria-label="Month">
+        @foreach (var month in Model)
+        {
+            <button type="button" class="btn btn-primary btnMonth" data-id="@month.Id">@month.Name</button>
+        }
+    </div>
+
+    <div id="appointments" class="row" style="padding:10px 0;">
+    </div>
+
+    <div id="appointmentModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="appointmentModal-content" style="padding:10px"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section Scripts{
+
+}
